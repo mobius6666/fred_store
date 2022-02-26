@@ -2,7 +2,7 @@ local keys = { ['G'] = 0x760A9C6F, ['S'] = 0xD27782E3, ['W'] = 0x8FD015D8, ['H']
 
 --ADD HERE YOUR STORE NAME, BLIP, AND COORDINATES
 local blips = {
-    { name = 'Tienda General', sprite = 1475879922,x = -321.89, y = 803.99, z = 117.88 }
+    { name = 'General', sprite = ,x = -321.89, y = 803.99, z = 117.88 }
 }
 
 local CurrentZoneActive = 0
@@ -12,7 +12,7 @@ local foodrinkItems = {
 
 	--COMPRAR--
 	{
-		['Text'] = "Durazno - x1",
+		['Text'] = "Peach - x1",
 		['SubText'] = "$1",
 		['Desc'] = "",
 		['Param'] = {
@@ -26,7 +26,7 @@ local foodrinkItems = {
 		}
 	},
 	{
-		['Text'] = "Cafe - x1",
+		['Text'] = "Coffee - x1",
 		['SubText'] = "$1",
 		['Desc'] = "",
 		['Param'] = {
@@ -58,7 +58,7 @@ local foodrinkItems = {
 
 local campingItems = {
 	{
-		['Text'] = "Hoguera - x1",
+		['Text'] = "Campfire - x1",
 		['SubText'] = "$10",
 		['Desc'] = "",
 		['Param'] = {
@@ -78,7 +78,7 @@ local plantingItems = {}
 local otherItems = {
 
 	{
-		['Text'] = "Ganzúa - x1",
+		['Text'] = "Lockpick - x1",
 		['SubText'] = "$10",
 		['Desc'] = "",
 		['Param'] = {
@@ -92,7 +92,7 @@ local otherItems = {
 		}
 	},
 	{
-		['Text'] = "Zanahoria - x1",
+		['Text'] = "Carrot - x1",
 		['SubText'] = "$10",
 		['Desc'] = "",
 		['Param'] = {
@@ -134,7 +134,7 @@ local otherItems = {
 		}
 	},
 	{
-		['Text'] = "Estimulante para caballo - x1",
+		['Text'] = "Horse Stim - x1",
 		['SubText'] = "$10",
 		['Desc'] = "",
 		['Param'] = {
@@ -148,9 +148,9 @@ local otherItems = {
 		}
 	},
 	{
-		['Text'] = "Bateador de oro - x1",
+		['Text'] = "GoldPan - x1",
 		['SubText'] = "$10",
-		['Desc'] = "~pa~Usar en los rios para extraer pepitas de oro~q~",
+		['Desc'] = "",
 		['Param'] = {
 			['Price'] = 10,
 			['Model'] = "goldpan",
@@ -162,7 +162,7 @@ local otherItems = {
 		}
 	},
 	{
-		['Text'] = "Medicina - x1",
+		['Text'] = "Medicine - x1",
 		['SubText'] = "$10",
 		['Desc'] = "",
 		['Param'] = {
@@ -193,7 +193,7 @@ local otherItems = {
 
 local selleableItems = {
 	{
-		['Text'] = "Pepita de oro - x1",
+		['Text'] = "Gold Nugget - x1",
 		['SubText'] = "$10",
 		['Desc'] = "",
 		['Param'] = {
@@ -207,7 +207,7 @@ local selleableItems = {
 		}
 	},
 	{
-		['Text'] = "Durazno - x1",
+		['Text'] = "Peach - x1",
 		['SubText'] = "$1",
 		['Desc'] = "",
 		['Param'] = {
@@ -311,15 +311,15 @@ end)
 --CREA MENU--
 
 Citizen.CreateThread( function()
-	WarMenu.CreateMenu('id_item', 'Tienda General', 'Interacción') -- MAIN MENU
-	WarMenu.SetSubTitle('id_item', 'Comprar o vender') -- MENU SUB TITLE
+	WarMenu.CreateMenu('id_item', 'General', 'Interaction) -- MAIN MENU
+	WarMenu.SetSubTitle('id_item', 'General') -- MENU SUB TITLE
 
-    WarMenu.CreateSubMenu('buy', 'id_item', 'Comprar Suministros') -- SUB MENU OF THE MAIN MENU
-    WarMenu.CreateSubMenu('fooddrink', 'buy', 'Comprar Suministros') -- SUB MENU OF THE BUY SUBMENU
-    WarMenu.CreateSubMenu('seeds', 'buy', 'Plantación') -- SUB MENU OF THE BUY SUBMENU
-    WarMenu.CreateSubMenu('camping', 'buy', 'Campamento') -- AND SO ON...
-    WarMenu.CreateSubMenu('others', 'buy', 'Otros')
-    WarMenu.CreateSubMenu('sell', 'id_item', 'Vender Suministros') -- SUB MENU OF THE MAIN MENU
+    WarMenu.CreateSubMenu('buy', 'id_item', 'Item') -- SUB MENU OF THE MAIN MENU
+    WarMenu.CreateSubMenu('fooddrink', 'buy', 'Food and Drink') -- SUB MENU OF THE BUY SUBMENU
+    WarMenu.CreateSubMenu('seeds', 'buy', 'Seeds') -- SUB MENU OF THE BUY SUBMENU
+    WarMenu.CreateSubMenu('camping', 'buy', 'Campiing') -- AND SO ON...
+    WarMenu.CreateSubMenu('others', 'buy', 'Other')
+    WarMenu.CreateSubMenu('sell', 'id_item', 'Sell Items') -- SUB MENU OF THE MAIN MENU
 	repeat
 		--JUST USE THIS AS REFERENCE FOR ANYTHING ELSE YOU WANT TO ADD OR CREATE, EXPLORE THE POSSIBILITIES!
 		if WarMenu.IsMenuOpened('id_item') then
